@@ -47,10 +47,15 @@ allOpen {
 //    }
 //}
 
-def AAVersion = "4.5.0-SNAPSHOT" // change this to your desired version, for example the latest stable: 4.4.0
+def AAVersion = "4.4.0" // change this to your desired version, for example the latest stable: 4.4.0
 
 dependencies {
     kapt "org.androidannotations:androidannotations:$AAVersion"
     implementation "org.androidannotations:androidannotations-api:$AAVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    kapt 'com.tmtron:green-annotations:1.0.1'
+    api 'com.tmtron:green-annotations-api:1.0.1'
 }

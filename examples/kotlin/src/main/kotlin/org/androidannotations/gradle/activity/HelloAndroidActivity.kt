@@ -2,15 +2,12 @@ package org.androidannotations.gradle.activity
 
 import android.app.Activity
 import android.widget.TextView
-import org.androidannotations.annotations.AfterViews
-import org.androidannotations.annotations.Background
-import org.androidannotations.annotations.EActivity
-import org.androidannotations.annotations.Extra
-import org.androidannotations.annotations.UiThread
-import org.androidannotations.annotations.ViewById
+import com.tmtron.greenannotations.EventBusGreenRobot
+import org.androidannotations.annotations.*
 import org.androidannotations.annotations.res.StringRes
 import org.androidannotations.gradle.R
-import java.util.Date
+import org.greenrobot.eventbus.EventBus
+import java.util.*
 
 @EActivity(R.layout.main)
 open class HelloAndroidActivity : Activity() {
@@ -24,6 +21,9 @@ open class HelloAndroidActivity : Activity() {
     @Extra
     @JvmField
     protected final var myIntExtra: Int = 0
+
+    @EventBusGreenRobot
+    lateinit var bus: EventBus
 
     @AfterViews
     protected fun afterViews() {
